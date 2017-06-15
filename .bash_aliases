@@ -23,11 +23,13 @@ function gacp {
     git pull
     git add --all .
     git ci -m "${1}"
-    if [ -z "${2}" ];
-        then 
-        git tag ${2}
+    if [ -n "${2}" ]; then 
+        echo "Tagging Commit"
+        git tag "${2}" 
+        git push origin "${2}"
+    else
+        git push origin
     fi
-    git push origin ${2} --follow-tags 
 }
 
 function dgacp {
