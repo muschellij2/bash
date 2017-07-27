@@ -1,6 +1,6 @@
 CCACHE=ccache
-CC=$(CCACHE)ccache clang
-CXX=$(CCACHE) clang++$(VER)
+CC=$(CCACHE) clang
+CXX=$(CCACHE) clang++
 SHLIB_CXXLD=clang++
 FC=$(CCACHE) gfortran
 F77=$(CCACHE) gfortran
