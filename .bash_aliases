@@ -1,3 +1,7 @@
+cdd() {
+    cd `dirname ${1}`
+}
+
 pdf2latex2()
 {   
     for arg;   
@@ -27,9 +31,10 @@ function gacp {
         echo "Tagging Commit"
         git tag "${2}" 
         git push origin "${2}"
-    else
-        git push origin
     fi
+    # else
+        git push origin
+    # fi
 }
 
 function dgacp {
