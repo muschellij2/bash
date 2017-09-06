@@ -37,6 +37,21 @@ function gacp {
     # fi
 }
 
+function gacp_skip {
+    git pull
+    git add --all .
+    git ci -m "${1}"
+    if [ -n "${2}" ]; then 
+        echo "Tagging Commit"
+        git tag "${2}" 
+        git push origin "${2}"
+    fi
+    git commit --amend -m "${1} [ci skip]"
+    git push origin
+}
+
+
+
 function dgacp {
     rm -r inst/dramms/*
     gacp "${1}"
