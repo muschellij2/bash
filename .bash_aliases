@@ -31,6 +31,7 @@ function gacp {
         echo "Tagging Commit"
         git tag "${2}" 
         git push origin "${2}"
+        git commit --amend -m "${1} [ci skip]"
     fi
     # else
         git push origin
