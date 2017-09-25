@@ -1,5 +1,7 @@
 cdd() {
-    cd `dirname ${1}`
+    x=`dirname "${1}"`
+    cd "${x}"
+    # cd `dirname "${1}"`
 }
 
 pdf2latex2()
